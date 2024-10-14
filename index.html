@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <style>
+        #myScheduleBtn {
+            background-color: #3a6ea5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        #myScheduleBtn:hover {
+            background-color: #2b5492;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3a6ea5;
+            color: white;
+            font-size: 18px;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        td div {
+            margin-bottom: 10px;
+        }
+
+        .time {
+            font-weight: bold;
+            color: #3a6ea5;
+        }
+
+        .subject {
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .lecture {
+            background-color: #f9f871;
+            color: #333;
+        }
+
+        .exercise {
+            background-color: #c1e1c1;
+            color: #333;
+        }
+
+        .selected {
+            background-color: blue !important;
+            color: white;
+        }
+
+        .other {
+            background-color: red !important;
+            color: white;
+        }
+
+        .subject:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="myScheduleBtn">Moj Raspored</button>
+
+
+    <h1>Ponedeljak</h1>
+
+
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vreme</th>
+                <th>Nastava</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:15 - 10:00</td>
+                <td>
+                    <div class="subject lecture" id="matematika" data-subject="ponedeljak" onclick="toggleSubject('matematika')">Matematika 1 (P - Amfiteatar 2)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="ponedeljak" onclick="toggleSubject('ekonomija')">Ekonomija (P - Amfiteatar 1)</div>
+                    <div class="subject lecture" id="elektronskoPoslovanje" data-subject="ponedeljak" onclick="toggleSubject('elektronskoPoslovanje')">Elektronsko poslovanje (P - Amfiteatar 3)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">10:15 - 12:00</td>
+                <td>
+                    <div class="subject lecture" id="ikt" data-subject="ponedeljak" onclick="toggleSubject('ikt')">Osnove IKT (P - Amfiteatar 1)</div>
+                    <div class="subject lecture" id="elektronskoPoslovanje" data-subject="ponedeljak" onclick="toggleSubject('elektronskoPoslovanje')">Elektronsko poslovanje (P - Amfiteatar 2)</div>
+                    <div class="subject lecture" id="matematika" data-subject="ponedeljak" onclick="toggleSubject('matematika')">Matematika 1 (P - Amfiteatar 3)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">12:15 - 14:00</td>
+                <td>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="ponedeljak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - Kabinet 13)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="ponedeljak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - Kabinet 14)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="ponedeljak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - Kabinet 06)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="ponedeljak" onclick="toggleSubject('ekonomija')">Ekonomija (P - Amfiteatar 5)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">14:15 - 16:00</td>
+                <td>
+                    <div class="subject lecture" id="menadzment" data-subject="ponedeljak" onclick="toggleSubject('menadzment')">Menadžment (P - Amfiteatar 1)</div>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <h1>Utorak</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vreme</th>
+                <th>Nastava</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:15 - 10:00</td>
+                <td>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="utorak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 60)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="utorak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 13)</div>
+                    <div class="subject lecture" id="matematika" data-subject="utorak" onclick="toggleSubject('matematika')">Matematika 1 (P - Amfiteatar 1)</div>
+                    <div class="subject lecture" id="menadzment" data-subject="utorak" onclick="toggleSubject('menadzment')">Menadžment (P - Amfiteatar 2)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">10:15 - 12:00</td>
+                <td>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="utorak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 61)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="utorak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 13)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="utorak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 17)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="utorak" onclick="toggleSubject('ekonomija')">Ekonomija (P - Amfiteatar 4)</div>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="utorak" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 21)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">12:15 - 14:00</td>
+                <td>
+                    <div class="subject lecture" id="ikt" data-subject="utorak" onclick="toggleSubject('ikt')">Osnove IKT (P - Amfiteatar 1)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="utorak" onclick="toggleSubject('ekonomija')">Ekonomija (P - Amfiteatar 4)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="utorak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 13)</div>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="utorak" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 20)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">14:15 - 16:00</td>
+                <td>
+                    <div class="subject lecture" id="ikt" data-subject="utorak" onclick="toggleSubject('ikt')">Osnove IKT (P - Amfiteatar 1)</div>
+                    <div class="subject lecture" id="elektronskoPoslovanje" data-subject="utorak" onclick="toggleSubject('elektronskoPoslovanje')">Elektronsko poslovanje (P - Amfiteatar 2)</div>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <h1>Sreda</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vreme</th>
+                <th>Nastava</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:15 - 10:00</td>
+                <td>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="sreda" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 12)</div>
+                    <div class="subject lecture" id="menadzment" data-subject="sreda" onclick="toggleSubject('menadzment')">Menadžment (P - Amfiteatar 1)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="sreda" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 18)</div>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="sreda" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 50)</div>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="sreda" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 30)</div>
+                    <div class="subject exercise" id="ekonomija-vezbe" data-subject="sreda" onclick="toggleSubject('ekonomija-vezbe')">Ekonomija (V - Amfiteatar 5)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">10:15 - 12:00</td>
+                <td>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="sreda" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 62)</div>
+                    <div class="subject lecture" id="engleski" data-subject="sreda" onclick="toggleSubject('engleski')">Engleski jezik u informatici (P - Amfiteatar 1)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="sreda" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 14)</div>
+                    <div class="subject exercise" id="ekonomija-vezbe" data-subject="sreda" onclick="toggleSubject('ekonomija-vezbe')">Ekonomija (V - Amfiteatar 4)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="sreda" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 50)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">12:15 - 14:00</td>
+                <td>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="sreda" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 50)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="sreda" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 16)</div>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="sreda" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 30)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">14:15 - 16:00</td>
+                <td>
+                    <div class="subject lecture" id="matematika" data-subject="sreda" onclick="toggleSubject('matematika')">Matematika 1 (P - Amfiteatar 1)</div>
+                    <div class="subject exercise" id="ekonomija-vezbe" data-subject="sreda" onclick="toggleSubject('ekonomija-vezbe')">Ekonomija (V - Amfiteatar 5)</div>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="sreda" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 30)</div>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <h1>Četvrtak</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vreme</th>
+                <th>Nastava</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:15 - 10:00</td>
+                <td>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="cetvrtak" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 18)</div>
+                    <div class="subject exercise" id="engleski-vezbe" data-subject="cetvrtak" onclick="toggleSubject('engleski-vezbe')">Engleski jezik u informatici (V - 14)</div>
+                    <div class="subject lecture" id="engleski" data-subject="cetvrtak" onclick="toggleSubject('engleski')">Engleski jezik u informatici (P - Amfiteatar 3)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="cetvrtak" onclick="toggleSubject('ekonomija')">Ekonomija (P - 20)</div>
+                    <div class="subject lecture" id="osnovi-organizacije" data-subject="cetvrtak" onclick="toggleSubject('osnovi-organizacije')">Osnovi organizacije (P - 20)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="cetvrtak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 13)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">10:15 - 12:00</td>
+                <td>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="cetvrtak" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 21)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="cetvrtak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - Amfiteatar 3)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="cetvrtak" onclick="toggleSubject('ekonomija')">Ekonomija (P - 14)</div>
+                    <div class="subject exercise" id="engleski-vezbe" data-subject="cetvrtak" onclick="toggleSubject('engleski-vezbe')">Engleski jezik u informatici (V - 18)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="cetvrtak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 06)</div>
+                    <div class="subject lecture" id="engleski" data-subject="cetvrtak" onclick="toggleSubject('engleski')">Engleski jezik u informatici (P - Amfiteatar 5)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">12:15 - 14:00</td>
+                <td>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="cetvrtak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 61)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="cetvrtak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 12)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="cetvrtak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - Čitaonica)</div>
+                    <div class="subject lecture" id="osnovi-organizacije" data-subject="cetvrtak" onclick="toggleSubject('osnovi-organizacije')">Osnovi organizacije (P - Amfiteatar 3)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="cetvrtak" onclick="toggleSubject('ekonomija')">Ekonomija (P - 30)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">14:15 - 16:00</td>
+                <td>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="cetvrtak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 60)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="cetvrtak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - Amfiteatar 5)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="cetvrtak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 06)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="cetvrtak" onclick="toggleSubject('ekonomija')">Ekonomija (P - Amfiteatar 5)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">16:15 - 18:00</td>
+                <td>
+                    <div class="subject lecture" id="osnovi-organizacije" data-subject="cetvrtak" onclick="toggleSubject('osnovi-organizacije')">Osnovi organizacije (P - Amfiteatar 21)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="cetvrtak" onclick="toggleSubject('ekonomija')">Ekonomija (P - 20)</div>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <h1>Petak</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vreme</th>
+                <th>Nastava</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:15 - 10:00</td>
+                <td>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="petak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 61)</div>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="petak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 60)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="petak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 14)</div>
+                    <div class="subject lecture" id="menadzment" data-subject="petak" onclick="toggleSubject('menadzment')">Menadžment (P - 30)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">10:15 - 12:00</td>
+                <td>
+                    <div class="subject lecture" id="ekonomija" data-subject="petak" onclick="toggleSubject('ekonomija')">Ekonomija (P - Amfiteatar 4)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="petak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 14)</div>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="petak" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 30)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">12:15 - 14:00</td>
+                <td>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="petak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 60)</div>
+                    <div class="subject exercise" id="elektronskoPoslovanje-vezbe" data-subject="petak" onclick="toggleSubject('elektronskoPoslovanje-vezbe')">Elektronsko poslovanje (V - 61)</div>
+                    <div class="subject exercise" id="engleski-vezbe" data-subject="petak" onclick="toggleSubject('engleski-vezbe')">Engleski jezik u informatici (V - 21)</div>
+                    <div class="subject exercise" id="matematika-vezbe" data-subject="petak" onclick="toggleSubject('matematika-vezbe')">Matematika 1 (V - 13)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="petak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 17)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="petak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 07)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">14:15 - 16:00</td>
+                <td>
+                    <div class="subject exercise" id="engleski-vezbe" data-subject="petak" onclick="toggleSubject('engleski-vezbe')">Engleski jezik u informatici (V - 18)</div>
+                    <div class="subject exercise" id="ikt-vezbe" data-subject="petak" onclick="toggleSubject('ikt-vezbe')">Osnove IKT (V - 06)</div>
+                    <div class="subject lecture" id="osnovi-organizacije" data-subject="petak" onclick="toggleSubject('osnovi-organizacije')">Osnovi organizacije (P - 21)</div>
+                    <div class="subject lecture" id="ekonomija" data-subject="petak" onclick="toggleSubject('ekonomija')">Ekonomija (P - 14)</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="time">16:15 - 18:00</td>
+                <td>
+                    <div class="subject exercise" id="menadzment-vezbe" data-subject="petak" onclick="toggleSubject('menadzment-vezbe')">Menadžment (V - 16)</div>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+
+
+    <script>
+        function toggleSubject(subjectId) {
+            // Get all subjects with the same ID
+            var allSubjects = document.querySelectorAll(`#${subjectId}`);
+
+            // First, mark all as red (all other occurrences of the subject)
+            allSubjects.forEach(function (element) {
+                element.classList.add('other');
+                element.classList.remove('selected');
+            });
+
+            // Then, mark the clicked subject as blue (remove red)
+            event.target.classList.add('selected');
+            event.target.classList.remove('other');
+        }
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+    document.getElementById('myScheduleBtn').addEventListener('click', function() {
+        // Create a new PDF document
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Set PDF title
+        doc.text("Moj Raspored", 10, 10);
+
+        // Get all selected (blue) subjects
+        const selectedSubjects = document.querySelectorAll('.selected');
+        let yOffset = 20; // Position for the text in PDF
+
+        // Group subjects by day using an object
+        const subjectsByDay = {};
+
+        selectedSubjects.forEach(function(subject) {
+            const day = subject.getAttribute('data-subject'); // Get the day from data-subject
+            const time = subject.closest('tr').querySelector('.time').innerText;
+            const subjectText = subject.innerText;
+
+            // If the day doesn't exist in the object, create an array for it
+            if (!subjectsByDay[day]) {
+                subjectsByDay[day] = [];
+            }
+
+            // Add the subject with time to the corresponding day
+            subjectsByDay[day].push(`${time} - ${subjectText}`);
+        });
+
+        // Write each day and its subjects to the PDF
+        Object.keys(subjectsByDay).forEach(function(day) {
+            doc.setFontSize(14); // Make the day larger and bold
+            doc.text(day, 10, yOffset); // Print the day
+            yOffset += 10;
+
+            doc.setFontSize(12); // Reset the font size for subjects
+            subjectsByDay[day].forEach(function(subject) {
+                doc.text(subject, 20, yOffset); // Indent subjects
+                yOffset += 10;
+
+                // Check if we need to add a new page
+                if (yOffset > 280) {
+                    doc.addPage();
+                    yOffset = 20;
+                }
+            });
+
+            yOffset += 10; // Add extra space between days
+        });
+
+        // Save the PDF
+        doc.save("Moj_Raspored.pdf");
+    });
+</script>
+
+
+
+
+</body>
+
+</html>
